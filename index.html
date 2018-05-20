@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+   <head>
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Feeds</title>
+      <link rel="icon" href="assets/vimeo-logo.png">
+      <!-- Bootstrap Styles -->
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css">
+      <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <!-- Bootstrap Js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/js/bootcards.min.js"></script>
+      <!-- jPList core js and css  -->
+      <link href="css/jplist.core.min.css" rel="stylesheet" type="text/css" />
+      <script src="js/jplist.core.min.js"></script>		
+      <!-- jPList toggle bundle -->
+      <script src="js/jplist.filter-toggle-bundle.min.js"></script>
+      <link href="css/jplist.filter-toggle-bundle.min.css" rel="stylesheet" type="text/css" />
+      <!-- jPList textbox filter control -->
+      <script src="js/jplist.textbox-filter.min.js"></script>
+      <link href="css/jplist.textbox-filter.min.css" rel="stylesheet" type="text/css" />
+      <!-- jPList lib -->
+      <script src="js/jplist.bootstrap-pagination-bundle.min.js"></script>
+      <!-- Default Style -->
+      <link rel="stylesheet" type="text/css" href="css/default.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <header id="header" class="box">
+         <div id="header-box" class="box">
+            <div class="center">
+               <div class="box">
+                  <!-- logo -->
+                  <div class="align-center text-shadow" id="logo">
+                     <p>
+                        <img title="Vimeo Logo" alt="" src="assets/vimeo-logo.png" />
+                        <a title="" href="http://vimeo.com">Vimeo</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- Main -->
+      <div class="box">
+      <div class="center">
+         <!-- Feeds Panel-->
+         <div id="feeds" class="box jplist" style="margin: 20px 0 50px 0">
+            <!-- panel -->
+            <div class="jplist-panel container">
+               <div class="jplist-group">
+                  <ul>
+                     <li>
+                        <!-- Filter by Likes -->
+                        <span
+                           data-control-type="range-filter"
+                           data-control-name="likes-range-filter"
+                           data-control-action="filter"
+                           data-path=".no-likes"
+                           data-min="10000">
+                        <i class="fa fa-heart"></i>
+                        Likes : +10000
+                        </span>
+                     </li>
+                  </ul>
+                  <!-- Filter By Desc -->
+                  <div class="text-filter-box">
+                     <input class="search-box"
+                        data-path=".video-description" 
+                        type="text" 
+                        value="" 
+                        placeholder="Search by Description" 
+                        data-control-type="textbox" 
+                        data-control-name="desc-filter" 
+                        data-control-action="filter"
+                        class="jplist-no-right-border"
+                        />
+                     <span class="list-count"></span>
+                  </div>
+               </div>
+               <!-- data -->   
+               <div  class="container">
+                  <div id="feed-list" class="list box text-shadow">
+                     <section class="list-wrap">
+                        <ul id="list" class="list">
+                        </ul>
+                     </section>
+                  </div>
+               </div>
+               <!-- Pagination panel -->
+               <div class="container jplist-panel">
+                  <div class="center-block">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <!-- pagination info label -->
+                           <div 
+                              class=" jplist-pagination-info"
+                              data-type="<strong>Page {current} of {pages}</strong><br/>" 
+                              data-control-type="pagination-info" 
+                              data-control-name="paging" 
+                              data-control-action="paging"></div>
+                           <!-- items per page dropdown -->
+                           <div 
+                              class="dropdown pull-left jplist-items-per-page"
+                              data-control-type="boot-items-per-page-dropdown" 
+                              data-control-name="paging" 
+                              data-control-action="paging">
+                              <button 
+                                 class="btn btn-primary dropdown-toggle" 
+                                 type="button" 
+                                 data-toggle="dropdown" 
+                                 id="dropdown-menu-1"
+                                 aria-expanded="true">					
+                              <span data-type="selected-text">Items per Page</span>
+                              <span class="caret"></span>						
+                              </button>
+                              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-1">
+                                 <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="50">50 per page</a>
+                                 </li>
+                                 <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="25" >25 per page</a>
+                                 </li>
+                                 <li role="presentation" class="divider"></li>
+                                 <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="10" data-default="true">10 per page</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-12">
+                           <!-- Pagination control -->
+                           <ul 
+                              class="pagination pull-left jplist-pagination"
+                              data-control-type="boot-pagination" 
+                              data-control-name="paging" 
+                              data-control-action="paging"
+                              data-range="3"
+                              data-mode="google-like">
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="box jplist-no-results text-shadow align-center">
+                  <p>No results found</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script type="text/javascript">
+      // Get JSON DATA
+       $(document).ready(function() {
+       $.getJSON("assets/data.json", function(json) {
+      var desc = "";
+      var plays = "";
+       for(var i=0, keys=Object.keys(json.data), l=keys.length; i<l; i++) {
+      // Truncate descriptions if too much long
+       desc =  jQuery.trim(json.data[i].description).substring(0, 150).split(" ").slice(0, -1).join(" ") + "..."; 
+      // Turn null values in Likes to 0
+      plays = (json.data[i].stats.plays == null) ? "0" : json.data[i].stats.plays;
+       $('#feed-list ul').append('<li class="list-item box"><div class="video-container"><div class="row"><div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="panel panel-default bootcards-media"><div class="panel-body row"><div class="row"><div class="col-xs-2"><a href="'+json.data[i].user.pictures.sizes[1].link+'"><img class="author-img" src="'+json.data[i].user.pictures.sizes[1].link+'"></a></div><div class="col-xs-10"><div class="row"><p class="author-name" id="title">'+json.data[i].user.name+'</p></div><div class="row heading"><h5 class="video-name"><a href="'+json.data[i].link+'">'+json.data[i].name+'</a></h5></div></div></div><div class="row body-card"><div class="col-xs-12"><h5 class="video-description">'+desc+'</h5></div></div></div><div class="panel-footer"><p class="no-plays">'+plays+'<i class="fa fa-play" aria-hidden="true"></i></p><p class="no-comments"><i class="fa fa-comment" aria-hidden="true"></i>'+json.data[i].metadata.connections.comments.total+'</p><p class="no-likes"><i class="fa fa-heart" aria-hidden="true"></i>'+json.data[i].metadata.connections.likes.total+'</p></div></div></div></div class="video-container"></li>');
+      
+       }
+      // Count Items
+       var jobCount = $('.list-item').length;
+         $('.list-count').text(jobCount + ' items');
+         //console.log(jobCount);
+      // Init list
+      $('#feeds').jplist({				
+      itemsBox: '.list' 
+      ,itemPath: '.list-item' 
+      ,panelPath: '.jplist-panel'	
+      });
+      
+       } );     
+       
+      });
+   </script>
+</html>
