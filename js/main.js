@@ -1,6 +1,6 @@
     // Get JSON DATA
        $(document).ready(function() {
-       $.getJSON("assets/data.json", function(json) {
+       $.getJSON("http://rawgit.com/Frontend-developer-challenge/edit/master/assets/data.json", function(json) {
       var desc = "";
       var plays = "";
        for(var i=0, keys=Object.keys(json.data), l=keys.length; i<l; i++) {
